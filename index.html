@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S E I Z E R</title>
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-    <style>
-        body { margin: 0; padding: 0; height: 100vh; background-color: black; }
-        model-viewer { width: 100%; height: 100%; }
-        model-viewer::part(default-ar-button){
-  position:fixed;
-  right:16px;
-  bottom:calc(env(safe-area-inset-bottom) + 16px);
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>S E I Z E R</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer@4.0.0/dist/model-viewer.min.js"></script>
+  <style>
+    html, body { margin: 0; padding: 0; height: 100%; background: #000; overflow: hidden; }
+    model-viewer { width: 100vw; height: 100dvh; display: block; }
+    @supports not (height: 100dvh) {
+      model-viewer { height: 100vh; }
+    }
 
-    </style>
+    model-viewer::part(default-ar-button){
+      position: fixed;
+      right: 16px;
+      bottom: calc(env(safe-area-inset-bottom) + 16px);
+      z-index: 10;
+    }
+  </style>
 </head>
 <body>
-    <model-viewer
-      src="seizer.glb"
-        ios-src="seizer.usdz"
-        alt="SEIZER 3D"
-        ar
-        ar-modes="webxr scene-viewer quick-look"
-        camera-controls
-        auto-rotate
-        shadow-intensity="0"
-        exposure="1"
-    ></model-viewer>
+  <model-viewer
+    src="seizer.glb"
+    ios-src="seizer.usdz"
+    alt="SEIZER 3D"
+    ar
+    ar-modes="webxr scene-viewer quick-look"
+    camera-controls
+    auto-rotate
+    shadow-intensity="0"
+    exposure="1"
+  ></model-viewer>
 </body>
-
 </html>
-
-
-
