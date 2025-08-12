@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEIZER</title>
+    <title>S E I Z E R</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <style>
         body { margin: 0; padding: 0; height: 100vh; background-color: black; }
         model-viewer { width: 100%; height: 100%; }
+        model-viewer::part(default-ar-button){
+  position:fixed;
+  right:16px;
+  bottom:calc(env(safe-area-inset-bottom) + 16px);
+}
+
     </style>
 </head>
 <body>
@@ -25,5 +31,6 @@
 </body>
 
 </html>
+
 
 
