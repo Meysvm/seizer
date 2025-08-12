@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>S E I Z E R</title>
+  <link rel="preload" as="image" href="/poster.webp" type="image/webp" />
   <script type="module" src="https://unpkg.com/@google/model-viewer@4.0.0/dist/model-viewer.min.js"></script>
   <style>
     html, body { margin: 0; padding: 0; height: 100%; background: #000; overflow: hidden; }
     model-viewer { width: 100vw; height: 100dvh; display: block; }
-    @supports not (height: 100dvh) {
-      model-viewer { height: 100vh; }
-    }
+    @supports not (height: 100dvh) { model-viewer { height: 100vh; } }
 
+ 
     model-viewer::part(default-ar-button){
       position: fixed;
       right: 16px;
@@ -25,12 +25,16 @@
     src="seizer.glb"
     ios-src="seizer.usdz"
     alt="SEIZER 3D"
+    poster="poster.webp"
+    reveal="auto"
     ar
     ar-modes="webxr scene-viewer quick-look"
     camera-controls
     auto-rotate
     shadow-intensity="0"
+    shadow-softness="0"
     exposure="1"
+    environment-image="neutral"
   ></model-viewer>
 </body>
 </html>
